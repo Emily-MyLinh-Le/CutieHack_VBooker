@@ -1,14 +1,16 @@
 import React from 'react';
 import '../App.css';
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button, Container} from 'react-bootstrap';
 import caraval from '../images/caraval.jpg';
 import giver from '../images/giver.jpg';
 import northernlights from '../images/northernlights.jpg';
 import Navigation2 from '../components/Navigation2';
+import Footer from '../Footer';
 function VotingFantasy(){
     return(
         <>
         <Navigation2/>
+        <Container maxWidth="130 rem">
         <Card  centered ='true'>
           <Card.Header>The Giver</Card.Header>
           <Card.Body>
@@ -42,6 +44,8 @@ function VotingFantasy(){
             <Button href="/votingdone" variant="secondary">Vote</Button>
           </Card.Body>
         </Card>
+        </Container>
+        <Footer/>
        </>
         
     )

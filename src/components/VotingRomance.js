@@ -1,14 +1,16 @@
 import React from 'react';
 import '../App.css';
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button, Container} from 'react-bootstrap';
 import kissquotient from '../images/kissquotient.jpg';
 import faultstars from '../images/faultstars.jpg';
 import ps from '../images/ps.jpg';
 import Navigation2 from '../components/Navigation2';
+import Footer from '../Footer';
 function VotingRomance(){
     return(
         <>
         <Navigation2/>
+        <Container maxWidth="130rem">
         <Card  centered ='true'>
           <Card.Header>The Kiss Quotient</Card.Header>
           <Card.Body>
@@ -42,6 +44,8 @@ function VotingRomance(){
             <Button href="/votingdone" variant="secondary">Vote</Button>
           </Card.Body>
         </Card>
+        </Container>
+        <Footer/>
        </>
         
     )

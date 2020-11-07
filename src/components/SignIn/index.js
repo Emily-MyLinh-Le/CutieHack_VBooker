@@ -3,8 +3,9 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { SignUpLink } from '../SignUp/index';
 import { withFirebase } from '../Firebase';
+import {FormGroup, Form } from 'react-bootstrap';
+import {  Navbar, Nav} from 'react-bootstrap';
 
- 
 
  
 const INITIAL_STATE = {
@@ -46,7 +47,11 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
  
     return (
+        
       <form onSubmit={this.onSubmit}>
+        <FormGroup controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
+        <h1></h1>
         <input
           name="email"
           value={email}
@@ -54,6 +59,11 @@ class SignInFormBase extends Component {
           type="text"
           placeholder="Email Address"
         />
+        </FormGroup>
+        
+        <FormGroup controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <h1></h1>
         <input
           name="password"
           value={password}
@@ -61,13 +71,15 @@ class SignInFormBase extends Component {
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        </FormGroup>
+        <button variant = "secondary" disabled={isInvalid} type="submit">
           Sign In
         </button>
  
         {error && <p>{error.message}</p>}
         
       </form>
+      
     );
   }
 }
@@ -78,7 +90,19 @@ const SignInForm = compose(
 )(SignInFormBase);
 const SignInPage = () => (
     <div>
-      <h1>SignIn</h1>
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand href="#home">VBooker </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+
+          <Nav className="mr-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            
+          </Nav>
+          <Nav.Link href="/signin">Sign in</Nav.Link>
+          
+        </Navbar.Collapse>
+      </Navbar>
       <SignInForm />
       <SignUpLink />
     </div>

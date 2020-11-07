@@ -12,7 +12,15 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #282c34;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -52,4 +60,8 @@ nav {
   justify-content: space-around;
   align-items: center;
   list-style: none;
+}
+.flexbox-container {
+  display: flex;
+  flex-direction: row;
 }

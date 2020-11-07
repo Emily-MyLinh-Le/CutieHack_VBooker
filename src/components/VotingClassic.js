@@ -1,19 +1,21 @@
 import React from 'react';
 import '../App.css';
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button, Container} from 'react-bootstrap';
 import Hamlet from '../images/Hamlet.jpg';
 import Odyssey from '../images/odyssey.jpg';
 import mobydick from '../images/mobydick.jpg';
 import Navigation2 from '../components/Navigation2';
+import Footer from '../Footer';
 function VotingClassic(){
     return(
         <>
         <Navigation2/>
+        <Container maxWidth="130 rem">
         <Card  centered ='true'>
           <Card.Header>Hamlet</Card.Header>
           <Card.Body>
             <img src={Hamlet}/>
-            <Card.Text>
+            <Card.Text textAlign="left">
             Hamlet is a story of how the ghost of a murdered king comes to haunt the living with tragic consequences. A vengeful ghost and a brother's murder, dominate the gloomy landscape of Hamlet's Denmark. Hamlet is a story of how the ghost of a murdered king comes to haunt the living with tragic consequences.
             </Card.Text>
             
@@ -42,6 +44,8 @@ function VotingClassic(){
             <Button href="/votingdone" variant="secondary">Vote</Button>
           </Card.Body>
         </Card>
+        </Container>
+        <Footer/>
        </>
         
     )

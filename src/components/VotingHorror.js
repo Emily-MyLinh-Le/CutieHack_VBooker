@@ -1,14 +1,16 @@
 import React from 'react';
 import '../App.css';
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button, Container} from 'react-bootstrap';
 import it from '../images/it.jpg';
 import exorcist from '../images/exorcist.jpg';
 import omen from '../images/omen.jpg';
 import Navigation2 from '../components/Navigation2';
+import Footer from '../Footer';
 function VotingHorror(){
     return(
         <>
         <Navigation2/>
+        <Container maxWidth="130rem">
         <Card  centered ='true'>
           <Card.Header>It</Card.Header>
           <Card.Body>
@@ -42,6 +44,8 @@ function VotingHorror(){
             <Button href="/votingdone" variant="secondary">Vote</Button>
           </Card.Body>
         </Card>
+        </Container>
+        <Footer/>
        </>
         
     )

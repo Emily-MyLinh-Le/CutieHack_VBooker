@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link,withRouter } from 'react-router-dom';
 import { FirebaseContext } from '../Firebase';
 import { withFirebase } from '../Firebase';
+import{Nav,Navbar, FormGroup, Form} from 'react-bootstrap';
 const INITIAL_STATE = {
     username: '',
     email: '',
@@ -11,7 +12,20 @@ const INITIAL_STATE = {
   };
   const SignUpPage = () => (
     <div>
-      <h1>SignUp</h1>
+        <Navbar bg="light" expand="lg">
+        <Navbar.Brand href="#home">VBooker </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+
+          <Nav className="mr-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            
+          </Nav>
+          <Nav.Link href="/signin">Sign in</Nav.Link>
+          
+        </Navbar.Collapse>
+      </Navbar>
+      
       <SignUpForm />
     </div>
   );
@@ -62,6 +76,9 @@ class SignUpFormBase extends Component {
  
     return (
       <form onSubmit={this.onSubmit}>
+        <FormGroup>
+        <Form.Label>Username</Form.Label>
+        <h1></h1>
         <input
           name="username"
           value={username}
@@ -69,6 +86,10 @@ class SignUpFormBase extends Component {
           type="text"
           placeholder="Full Name"
         />
+        </FormGroup>
+        <FormGroup>
+            <Form.Label>Email Address</Form.Label>
+            <h1></h1>
         <input
           name="email"
           value={email}
@@ -76,6 +97,10 @@ class SignUpFormBase extends Component {
           type="text"
           placeholder="Email Address"
         />
+        </FormGroup>
+        <FormGroup>
+        <Form.Label>Password</Form.Label>
+        <h1></h1>
         <input
           name="passwordOne"
           value={passwordOne}
@@ -83,6 +108,10 @@ class SignUpFormBase extends Component {
           type="password"
           placeholder="Password"
         />
+        </FormGroup>
+        <FormGroup>
+            <Form.Label>Confirm Password</Form.Label>
+            <h1></h1>
         <input
           name="passwordTwo"
           value={passwordTwo}
@@ -90,6 +119,7 @@ class SignUpFormBase extends Component {
           type="password"
           placeholder="Confirm Password"
         />
+        </FormGroup>
         <button disabled={isInvalid} type="submit">Sign Up</button>
  
         {error && <p>{error.message}</p>}
@@ -106,4 +136,4 @@ const SignUpLink = () => (
 const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 export default SignUpPage;
  
-export { SignUpForm, SignUpLink };
+export { SignUpForm, SignUpLink, SignUpPage };

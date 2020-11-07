@@ -22,7 +22,7 @@ function Navigation2() {
               <NavDropdown.Item href="/week/3-11-20">3st Week November</NavDropdown.Item>
               
             </NavDropdown>
-            <Nav.Link href="/Booking">My booking</Nav.Link>
+            
           </Nav>
           <Nav.Link href="/">Log Out</Nav.Link>
           
