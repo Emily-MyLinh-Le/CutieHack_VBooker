@@ -1,3 +1,3 @@
-##Open folder in terminal
-##type npm install
-##type npm start
+Open folder in terminal<br />
+type npm install <br />
+type npm start
